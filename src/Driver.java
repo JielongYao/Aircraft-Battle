@@ -1,6 +1,7 @@
 public class Driver
 {
     public static void main(String[] args){
-        GameFrame game = new GameFrame();
+        GameWin game = new GameWin();
+        game.launch();
     }
 }
