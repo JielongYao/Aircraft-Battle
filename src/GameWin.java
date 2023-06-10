@@ -20,6 +20,6 @@ public class GameWin extends JFrame{
         Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //access the background picture
         g.drawImage(bgImg, 0, 0 , null); //x = 0, y = 0
     }
-
+ 
 }
 
