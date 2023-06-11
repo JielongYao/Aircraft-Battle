@@ -1,6 +1,7 @@
 import javax.swing.*; 
 import java.awt.*;
 
+
 public class GameWin extends JFrame{
 
     public void launch(){
@@ -17,7 +18,8 @@ public class GameWin extends JFrame{
     }
 
     public void paint(Graphics g){
-        Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //access the background picture
+        //Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //another method to access the background picture
+        Image bgImg = new ImageIcon(this.getClass().getResource("imgs/bg.jpg")).getImage(); //access the background picture
         g.drawImage(bgImg, 0, 0 , null); //x = 0, y = 0
     }
  
