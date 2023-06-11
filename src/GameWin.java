@@ -1,11 +1,6 @@
 import javax.swing.*; 
 import java.awt.*;
-<<<<<<< HEAD
- 
-=======
 
-
->>>>>>> 4e11f9e163f73dd3f2f9cfa23ab7e8c2265a5872
 public class GameWin extends JFrame{
 
     public void launch(){
@@ -30,11 +25,10 @@ public class GameWin extends JFrame{
         g.drawImage(bossImg, 190, 70 , null); //x = 190, y = 70
 
         Image explodeImg = new ImageIcon(this.getClass().getResource("imgs/explode/e6.gif")).getImage(); //access the background picture
-        g.drawImage(explodeImg, 270, 350 , null); //x = 270, y = 350
+        g.drawImage(explodeImg, 270, 400 , null); //x = 270, y = 350
 
         Image planeImg = new ImageIcon(this.getClass().getResource("imgs/plane.png")).getImage(); //access the background picture
-        g.drawImage(planeImg, 280, 470 , null); //x = 280, y = 470
+        g.drawImage(planeImg, 280, 670 , null); //x = 280, y = 470
     }
  
 }
-
