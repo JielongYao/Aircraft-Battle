@@ -37,18 +37,16 @@ public class GameWin extends JFrame{
         //For example, when window is resized, when the component is made visible, when repaint() is called... it will be called, whenever it is necessary.
 
         if(state == 0){
-            //Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //another method to access the background picture
-            Image bgImg = new ImageIcon(this.getClass().getResource("imgs/bg.jpg")).getImage(); //access the background picture
-            g.drawImage(bgImg, 0, 0 , null); //x = 0, y = 0
+            
+            //Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //another method to access the background picture here without GameUtils.java
+            //Image bgImg = new ImageIcon(this.getClass().getResource("imgs/bg.jpg")).getImage(); //access the background picture here without GameUtils.java
+            g.drawImage(GameUtils.bgImg, 0, 0 , null); //x = 0, y = 0
 
-            Image bossImg = new ImageIcon(this.getClass().getResource("imgs/boss.png")).getImage(); //access the boss picture
-            g.drawImage(bossImg, 190, 70 , null); //x = 190, y = 70
+            g.drawImage(GameUtils.bossImg, 190, 70 , null); //x = 190, y = 70
 
-            Image explodeImg = new ImageIcon(this.getClass().getResource("imgs/explode/e6.gif")).getImage(); //access the background picture
-            g.drawImage(explodeImg, 270, 400 , null); //x = 270, y = 400
+            g.drawImage(GameUtils.explodeImg, 270, 400 , null); //x = 270, y = 400
 
-            Image planeImg = new ImageIcon(this.getClass().getResource("imgs/plane.png")).getImage(); //access the background picture
-            g.drawImage(planeImg, 280, 670 , null); //x = 280, y = 670
+            g.drawImage(GameUtils.planeImg, 280, 670 , null); //x = 280, y = 670
 
             //Draw the bold italic words "Left Click to Start" on the game start interface
             g.setColor(Color.BLUE); // set font color
