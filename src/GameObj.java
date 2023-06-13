@@ -84,5 +84,34 @@ public class GameObj{
 
 
     //constructor
+    public GameObj(){}
     
+    public GameObj(Image img, int x, int y, double speed){
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+    }
+
+    public GameObj(Image img, int width, int height, int x, int y, double speed, GameWin frame){
+        this.img = img;
+        this.width = width;
+        this.height = height;
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+        this.frame = frame;
+    }
+
+
+    //method to draw itself
+    public void paintSelf(Graphics g){//g is like a brush
+        g.drawImage(img, x, y, null); //x, y decide its location on the interface
+    }
+
+    
+    //method to return the element's rectangle, which used to detect collision
+    public Rectangle getRec(){
+        return new Rectangle(x, y, width, height);
+    }
 }

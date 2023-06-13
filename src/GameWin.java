@@ -8,6 +8,8 @@ public class GameWin extends JFrame{
     //0: unstarted, 1: in the game, 2: paused, 3: defeat, 4: victory
     int state = 0; 
 
+    BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2);
+
     public void launch(){
 
         this.setSize(600, 800); //width, height
@@ -44,17 +46,26 @@ public class GameWin extends JFrame{
 
             g.drawImage(GameUtils.bossImg, 190, 70 , null); //x = 190, y = 70
 
-            g.drawImage(GameUtils.explodeImg, 270, 400 , null); //x = 270, y = 400
+            g.drawImage(GameUtils.explodeImg, 270, 350, null); //x = 270, y = 350
 
-            g.drawImage(GameUtils.planeImg, 280, 670 , null); //x = 280, y = 670
+            g.drawImage(GameUtils.planeImg, 280, 470 , null); //x = 280, y = 470
 
             //Draw the bold italic words "Left Click to Start" on the game start interface
             g.setColor(Color.BLUE); // set font color
             g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, 30)); //set font name and size
             g.drawString("Left Click to Start", 160, 320); //x = 160, y = 320
         }
-        
 
+        if(state == 1){
+            while(true){
+                bgObj.paintSelf(g);
+                try{
+                    Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
+                }catch(Exception e){ //there will be an error without this exception handling
+                    e.printStackTrace();
+                }
+            }
+        }
     }
  
 }
