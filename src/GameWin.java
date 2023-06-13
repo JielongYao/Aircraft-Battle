@@ -44,9 +44,9 @@ public class GameWin extends JFrame{
 
             g.drawImage(GameUtils.bossImg, 190, 70 , null); //x = 190, y = 70
 
-            g.drawImage(GameUtils.explodeImg, 270, 400 , null); //x = 270, y = 400
+            g.drawImage(GameUtils.explodeImg, 270, 350, null); //x = 270, y = 350
 
-            g.drawImage(GameUtils.planeImg, 280, 670 , null); //x = 280, y = 670
+            g.drawImage(GameUtils.planeImg, 280, 470 , null); //x = 280, y = 470
 
             //Draw the bold italic words "Left Click to Start" on the game start interface
             g.setColor(Color.BLUE); // set font color
