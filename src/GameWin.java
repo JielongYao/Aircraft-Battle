@@ -8,6 +8,8 @@ public class GameWin extends JFrame{
     //0: unstarted, 1: in the game, 2: paused, 3: defeat, 4: victory
     int state = 0; 
 
+    BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2);
+
     public void launch(){
 
         this.setSize(600, 800); //width, height
@@ -53,8 +55,17 @@ public class GameWin extends JFrame{
             g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, 30)); //set font name and size
             g.drawString("Left Click to Start", 160, 320); //x = 160, y = 320
         }
-        
 
+        if(state == 1){
+            while(true){
+                bgObj.paintSelf(g);
+                try{
+                    Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
+                }catch(Exception e){ //there will be an error without this exception handling
+                    e.printStackTrace();
+                }
+            }
+        }
     }
  
 }

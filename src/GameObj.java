@@ -85,6 +85,13 @@ public class GameObj{
 
     //constructor
     public GameObj(){}
+    
+    public GameObj(Image img, int x, int y, double speed){
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+    }
 
     public GameObj(Image img, int width, int height, int x, int y, double speed, GameWin frame){
         this.img = img;
