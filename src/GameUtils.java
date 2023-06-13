@@ -9,6 +9,6 @@ public class GameUtils{
 
     public static Image explodeImg = new ImageIcon("imgs/explode/e6.gif").getImage(); //access the explosion picture
 
-    public static Image planeImg = new ImageIcon("imgs/plane.png").getImage(); //access the plane picture
+    public static Image planeImg = new ImageIcon("imgs/plane.png").getImage(); //access the plane picture 
 
 }
