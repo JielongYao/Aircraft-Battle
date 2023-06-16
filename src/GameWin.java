@@ -31,6 +31,15 @@ public class GameWin extends JFrame{
                 }
             }
         });
+
+        while(true){
+            repaint();
+            try{
+                Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
+            }catch(Exception e){ //there will be an error without this exception handling
+                e.printStackTrace();
+            }
+        }
     }
 
     public void paint(Graphics g){
@@ -57,15 +66,9 @@ public class GameWin extends JFrame{
         }
 
         if(state == 1){
-            while(true){
-                bgObj.paintSelf(g);
-                try{
-                    Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
-                }catch(Exception e){ //there will be an error without this exception handling
-                    e.printStackTrace();
-                }
-            }
+            bgObj.paintSelf(g);
         }
+        
     }
  
 }
