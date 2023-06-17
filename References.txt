@@ -3,3 +3,5 @@ References:
 1. How does paint() work?: https://stackoverflow.com/questions/7764602/how-is-paint-running-without-being-called-in-the-main-method
 
 2. How to solve "Images can't be loaded into a java Swing window": https://stackoverflow.com/questions/20318945/java-image-not-showing
+
+3. Double buffering to solve screen flicker: https://blog.csdn.net/weixin_29699727/article/details/114158431

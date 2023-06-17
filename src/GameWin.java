@@ -1,4 +1,4 @@
-import javax.swing.*; 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -8,7 +8,10 @@ public class GameWin extends JFrame{
     //0: unstarted, 1: in the game, 2: paused, 3: defeat, 4: victory
     int state = 0; 
 
-    BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2);
+    BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2); //background object
+    Image offScreenImage = null;
+
+    PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, )
 
     public void launch(){
 
@@ -42,6 +45,24 @@ public class GameWin extends JFrame{
         }
     }
 
+
+    @Override
+    public void update(Graphics g){//double buffering technique to solve the screen flicker
+
+        //paint(g);
+        if (offScreenImage == null){
+            offScreenImage = createImage(600, 800);
+        }
+
+        Graphics gOff = offScreenImage.getGraphics();
+        gOff.clearRect(0, 0, 600, 800);
+        this.paint(gOff);
+        g.drawImage(offScreenImage, 0, 0, null);
+
+    }
+
+
+    @Override
     public void paint(Graphics g){
         //The paint method is called by the Event Dispatch Thread (EDT) and is basically out of my control. I never invoke paint mathod myself. 
         //When I realize a user interface such as call setVisible(true), Swing starts the EDT. This EDT thread then runs in the background and, whenever my component needs to be painted, it calls the paint method with an appropriate Graphics instance for me to use for painting.
