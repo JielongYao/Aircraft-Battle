@@ -44,7 +44,7 @@ public class GameWin extends JFrame{
             }
         }
     }
-
+    
 
     @Override
     public void paint(Graphics g){
