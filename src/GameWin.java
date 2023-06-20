@@ -11,7 +11,8 @@ public class GameWin extends JFrame{
     BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2); //background object
 
     Image offScreenImage = null;
-    //PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, )
+    
+    PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, 290, 550, 0, this); //the plane object on the player's side
 
     public void launch(){
 
@@ -25,13 +26,21 @@ public class GameWin extends JFrame{
 
         this.setVisible(true);
 
-        this.addMouseListener(new MouseAdapter(){
+        this.addMouseListener(new MouseAdapter(){//click mouse to start game
 
             public void mouseClicked(MouseEvent e){
                 if(e.getButton() == 1 && state == 0){//when left mouse click and game is in unstarted state
                     state = 1; //set game state to "in the game" state
                     repaint(); //call paint()
                 }
+            }
+        });
+
+        this.addMouseMotionListener(new MouseAdapter(){//make the player's airplane move following mouse's movement
+            @Override
+            public void mouseMoved(MouseEvent e){
+                planeObj.x = e.getX() - 19;
+                planeObj.y = e.getY() - 20;
             }
         });
 
@@ -76,6 +85,7 @@ public class GameWin extends JFrame{
 
         if(state == 1){
             bgObj.paintSelf(gOff);
+            planeObj.paintSelf(gOff);
         }
         g.drawImage(offScreenImage, 0, 0, null);
         

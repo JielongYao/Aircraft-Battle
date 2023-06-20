@@ -4,5 +4,5 @@ References:
 
 2. How to solve "Images can't be loaded into a java Swing window": https://stackoverflow.com/questions/20318945/java-image-not-showing
 
-3. Behaviour of paint(), update() and repaint(): If repaint() is just called by user interactions with components you should have no problems using repaint() this way. However, if repaint() is called in a tight loop, the AWT thread queue may be overwhelmed and strange things may happen. Repaint() merely requests the AWT thread to call update(). It then returns immediately. This type of behaviour is called asynchronous. How the AWT thread reacts to the request is up to it.
-https://www.cs.ryerson.ca/mes/courses/cps530/programs/threads/Repaint/ This is why I don't override update() to solve screen flicker, because repaint() in launch() doesn't call update().
+3. Behaviour of paint(), update() and repaint(): However, if repaint() is called in a tight loop, the AWT thread queue may be overwhelmed and strange things may happen. Repaint() merely requests the AWT thread to call update(). It then returns immediately. This type of behaviour is called asynchronous. How the AWT thread reacts to the request is up to it.
+https://www.cs.ryerson.ca/mes/courses/cps530/programs/threads/Repaint/ This is why I don't override update() to solve screen flicker, because repaint() in launch() doesn't call update() in my code.
