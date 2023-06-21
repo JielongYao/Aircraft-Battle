@@ -14,6 +14,8 @@ public class GameWin extends JFrame{
     
     PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, 290, 550, 0, this); //the plane object on the player's side
 
+    
+
     public void launch(){
 
         this.setSize(600, 800); //width, height
