@@ -12,4 +12,8 @@ public class GameUtils{
     public static Image planeImg = new ImageIcon("imgs/plane.png").getImage(); //access the plane picture 
 
     public static Image shellImg = new ImageIcon("imgs/shell.png").getImage(); //access the picture of the shell of the plane of the player
+
+    
+
+    
 }

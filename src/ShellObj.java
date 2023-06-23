@@ -15,6 +15,7 @@ public class ShellObj extends GameObj{
 
     public void paintSelf(Graphics g){
         super.paintSelf(g);
+        y -= speed; //shell is moving upward
     }
 
     public Rectangle getRec(){

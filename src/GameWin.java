@@ -14,7 +14,7 @@ public class GameWin extends JFrame{
     
     PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, 290, 550, 0, this); //the plane object on the player's side
 
-    
+    ShellObj shellObj = new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX(), planeObj.getY(), 5, this);
 
     public void launch(){
 
@@ -88,6 +88,7 @@ public class GameWin extends JFrame{
         if(state == 1){
             bgObj.paintSelf(gOff);
             planeObj.paintSelf(gOff);
+            shellObj.paintSelf(gOff);
         }
         g.drawImage(offScreenImage, 0, 0, null);
         
