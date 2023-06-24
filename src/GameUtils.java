@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.util.*;
 
 public class GameUtils{
     
@@ -13,7 +14,8 @@ public class GameUtils{
 
     public static Image shellImg = new ImageIcon("imgs/shell.png").getImage(); //access the picture of the shell of the plane of the player
 
-    
+    public static ArrayList<ShellObj> shellObjList = new ArrayList<>(); //a collection of shell object of the plane at our side
 
-    
+    public static ArrayList<GameObj> gameObjList = new ArrayList<>(); //a collection of all the objects in the game
+
 }

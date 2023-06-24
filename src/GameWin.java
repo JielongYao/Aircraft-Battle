@@ -14,7 +14,7 @@ public class GameWin extends JFrame{
     
     PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, 290, 550, 0, this); //the plane object on the player's side
 
-    ShellObj shellObj = new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX(), planeObj.getY(), 5, this);
+    int count = 0;// number of times to invoke createObj()
 
     public void launch(){
 
@@ -27,6 +27,10 @@ public class GameWin extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the application when clicking the clsoe button
 
         this.setVisible(true);
+
+        GameUtils.gameObjList.add(bgObj); //add background object to the list of all objects in the game
+
+        GameUtils.gameObjList.add(planeObj); ////add plane object at the player side to the list of all objects in the game
 
         this.addMouseListener(new MouseAdapter(){//click mouse to start game
 
@@ -47,6 +51,7 @@ public class GameWin extends JFrame{
         });
 
         while(true){
+            createObj();
             repaint();
             try{
                 Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
@@ -86,12 +91,27 @@ public class GameWin extends JFrame{
         }
 
         if(state == 1){
-            bgObj.paintSelf(gOff);
-            planeObj.paintSelf(gOff);
-            shellObj.paintSelf(gOff);
+            // bgObj.paintSelf(gOff);
+            // planeObj.paintSelf(gOff);
+            // shellObj.paintSelf(gOff);
+
+            // Game objects are no longer drawn individually line by line
+            // Instead, after adding all the objects in the game into the list, we can iterate over the list and make each object to paint itself to reduce code repetition
+            for(int i = 0; i < GameUtils.gameObjList.size(); i++){
+                GameUtils.gameObjList.get(i).paintSelf(gOff);
+            }
         }
         g.drawImage(offScreenImage, 0, 0, null);
         
     }
- 
+
+
+    public void createObj(){
+        if(count % 10 == 0){//create a shell of our side every 15 times invoking createObj(); otherwise the shell (or other objects) generation rate will be very high
+            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX() + 12, planeObj.getY() - 20, 8, this)); // create new shell object at the player's side
+            GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
+        }
+        count++;
+    }
+
 }
