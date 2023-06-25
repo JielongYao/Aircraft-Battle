@@ -108,7 +108,7 @@ public class GameWin extends JFrame{
 
     public void createObj(){
         if(count % 10 == 0){//create a shell of our side every 15 times invoking createObj(); otherwise the shell (or other objects) generation rate will be very high
-            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX() + 12, planeObj.getY() - 20, 8, this)); // create new shell object at the player's side
+            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX() + 12, planeObj.getY() - 20, 6, this)); // create new shell object at the player's side
             GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
         }
         count++;
