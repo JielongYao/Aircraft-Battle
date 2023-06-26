@@ -15,6 +15,7 @@ public class Enemy2Obj extends GameObj{
 
     public void paintSelf(Graphics g){
         super.paintSelf(g);
+        y += speed;
     }
 
     public Rectangle getRec(){
