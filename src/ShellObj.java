@@ -1,6 +1,7 @@
 import java.awt.*;
 
-public class ShellObj extends GameObj{
+public class ShellObj extends GameObj{//class of shell of the plane at player's side in the game
+
     public ShellObj(){
         super();
     }

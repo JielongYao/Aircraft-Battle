@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class PlaneObj extends GameObj{
+public class PlaneObj extends GameObj{//class of the plane at player's side in the game
 
     public PlaneObj(){
         super();

@@ -1,0 +1,1 @@
+//class of the bullet of the second type of enemy plane in the game

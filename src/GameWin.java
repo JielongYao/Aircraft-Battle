@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GameWin extends JFrame{
+public class GameWin extends JFrame{//game windows class in the game
     
     //variable to record the game state
     //0: unstarted, 1: in the game, 2: paused, 3: defeat, 4: victory

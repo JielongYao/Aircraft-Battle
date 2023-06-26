@@ -1,6 +1,7 @@
 import java.awt.*;
 
-public class BgObj extends GameObj{
+public class BgObj extends GameObj{//class of background in the game
+
     public BgObj(){
         super();
     }

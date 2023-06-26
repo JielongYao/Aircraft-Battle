@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Enemy2Obj extends GameObj{
+public class Enemy2Obj extends GameObj{//class of the second type of enemy plane in the game
     public Enemy2Obj(){
         super();
     }
