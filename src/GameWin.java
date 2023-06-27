@@ -112,14 +112,25 @@ public class GameWin extends JFrame{//game windows class in the game
             GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
         }
 
-        if(count % 60 == 0){
+        if(count % 60 == 0){//control the generation rate of the object of the first type of enemy 
             GameUtils.enemy1ObjList.add(new Enemy1Obj(GameUtils.enemy1Img, 32, 24, (int)(Math.random() * 10) * 60, 0, 5, this)); // create a new plane object of the first enemy plane type
             GameUtils.gameObjList.add(GameUtils.enemy1ObjList.get(GameUtils.enemy1ObjList.size() - 1));
         }
 
-        if(count % 200 == 0){
-            GameUtils.enemy2ObjList.add(new Enemy2Obj(GameUtils.enemy2Img, 44, 67, (int)(Math.random() * 10) * 60, 0, 3, this)); // create a new plane object of the first enemy plane type
-            GameUtils.gameObjList.add(GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1));
+        if(count % 30 == 0){//control the generation rate of the object of the bullet of the second type of enemy 
+
+            if(count % 150 == 0){//control the generation rate of the object of the second type of enemy 
+                GameUtils.enemy2ObjList.add(new Enemy2Obj(GameUtils.enemy2Img, 44, 67, (int)(Math.random() * 10) * 60, 0, 3, this)); // create a new plane object of the first enemy plane type
+                GameUtils.gameObjList.add(GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1));
+            }
+
+            if(GameUtils.enemy2ObjList.size() > 0){
+                int x = GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1).getX(); //x coordinate of the location of the very newly generated enemy2 object
+                int y = GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1).getY(); //y coordinate of the location of the very newly generated enemy2 object
+                GameUtils.enemy2BulletObjList.add(new Enemy2BulletObj(GameUtils.enemy2BulletImg, 14, 25, x + 15, y + 51, 5, this)); // create a new plane object of the first enemy plane type
+                GameUtils.gameObjList.add(GameUtils.enemy2BulletObjList.get(GameUtils.enemy2BulletObjList.size() - 1));
+            }
+
         }
 
         count++;
