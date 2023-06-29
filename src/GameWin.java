@@ -94,6 +94,9 @@ public class GameWin extends JFrame{//game windows class in the game
             // bgObj.paintSelf(gOff);
             // planeObj.paintSelf(gOff);
             // shellObj.paintSelf(gOff);
+            
+            //delete all game onjects which has been removed from the game window to reduce pressure to paint game elements
+            GameUtils.gameObjList.removeAll(GameUtils.removeList);
 
             // Game objects are no longer drawn individually line by line
             // Instead, after adding all the objects in the game into the list, we can iterate over the list and make each object to paint itself to reduce code repetition
@@ -117,9 +120,9 @@ public class GameWin extends JFrame{//game windows class in the game
             GameUtils.gameObjList.add(GameUtils.enemy1ObjList.get(GameUtils.enemy1ObjList.size() - 1));
         }
 
-        if(count % 30 == 0){//control the generation rate of the object of the bullet of the second type of enemy 
+        if(count % 20 == 0){//control the generation rate of the object of the bullet of the second type of enemy 
 
-            if(count % 150 == 0){//control the generation rate of the object of the second type of enemy 
+            if(count % 140 == 0){//control the generation rate of the object of the second type of enemy 
                 GameUtils.enemy2ObjList.add(new Enemy2Obj(GameUtils.enemy2Img, 44, 67, (int)(Math.random() * 10) * 60, 0, 3, this)); // create a new plane object of the first enemy plane type
                 GameUtils.gameObjList.add(GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1));
             }
@@ -127,7 +130,7 @@ public class GameWin extends JFrame{//game windows class in the game
             if(GameUtils.enemy2ObjList.size() > 0){
                 int x = GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1).getX(); //x coordinate of the location of the very newly generated enemy2 object
                 int y = GameUtils.enemy2ObjList.get(GameUtils.enemy2ObjList.size() - 1).getY(); //y coordinate of the location of the very newly generated enemy2 object
-                GameUtils.enemy2BulletObjList.add(new Enemy2BulletObj(GameUtils.enemy2BulletImg, 14, 25, x + 15, y + 51, 5, this)); // create a new plane object of the first enemy plane type
+                GameUtils.enemy2BulletObjList.add(new Enemy2BulletObj(GameUtils.enemy2BulletImg, 14, 25, x + 15, y + 51, 7, this)); // create a new plane object of the first enemy plane type
                 GameUtils.gameObjList.add(GameUtils.enemy2BulletObjList.get(GameUtils.enemy2BulletObjList.size() - 1));
             }
 
