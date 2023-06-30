@@ -18,6 +18,7 @@ public class GameUtils{
     public static ArrayList<Enemy1Obj> enemy1ObjList = new ArrayList<>(); //a collection of objects of the first type of enemy 
     public static ArrayList<Enemy2Obj> enemy2ObjList = new ArrayList<>(); //a collection of objects of the second type of enemy
     public static ArrayList<Enemy2BulletObj> enemy2BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of the second type of enemy
+    public static ArrayList<ExplosionObj> explosionObjList = new ArrayList<>(); //a collection of objects of explosion
     public static ArrayList<GameObj> removeList = new ArrayList<>(); //a collection of game objects which have been removed from the game window
     
     public static ArrayList<GameObj> gameObjList = new ArrayList<>(); //a collection of all the objects in the game

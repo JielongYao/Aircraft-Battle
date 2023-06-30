@@ -22,12 +22,17 @@ public class Enemy2Obj extends GameObj{//class of the second type of enemy plane
         //After the enemy2 object collides with player's shell object 3 times, then enemy2 object will disappear
         for(ShellObj shellObj: GameUtils.shellObjList){
             if(this.getRec().intersects(shellObj.getRec())){
+
                 shellObj.setX(-100);
                 shellObj.setY(-100);//the player's plane's shell object is removed from the game window
+
                 GameUtils.removeList.add(shellObj);
                 health--;
 
                 if(health <= 0){
+                    GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after enemy2 collide 3 times with our shell, so we create a new explosion object
+                    GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
                     this.x = -200;
                     this.y = -200;//the enemy2 object is removed from the game window
                     GameUtils.removeList.add(this);

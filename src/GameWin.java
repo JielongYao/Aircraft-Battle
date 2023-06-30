@@ -115,7 +115,7 @@ public class GameWin extends JFrame{//game windows class in the game
             GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
         }
 
-        if(count % 60 == 0){//control the generation rate of the object of the first type of enemy 
+        if(count % 30 == 0){//control the generation rate of the object of the first type of enemy 
             GameUtils.enemy1ObjList.add(new Enemy1Obj(GameUtils.enemy1Img, 32, 24, (int)(Math.random() * 10) * 60, 0, 5, this)); // create a new plane object of the first enemy plane type
             GameUtils.gameObjList.add(GameUtils.enemy1ObjList.get(GameUtils.enemy1ObjList.size() - 1));
         }

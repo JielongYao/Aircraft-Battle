@@ -20,10 +20,16 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
         //the first case: the player's plane object collides with enemy1 object. Both objects will disappear
         for(Enemy1Obj enemy1Obj: GameUtils.enemy1ObjList){
             if(this.getRec().intersects(enemy1Obj.getRec())){
+
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
                 enemy1Obj.setX(-100);
                 enemy1Obj.setY(-100);//the enemy object is removed from the game window
+
                 this.x = -200;
                 this.y = -200;//the player's plane object is removed from the game window
+
                 GameUtils.removeList.add(enemy1Obj);
                 GameUtils.removeList.add(this);
             }
@@ -32,10 +38,16 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
         //the second case: the player's plane object collides with enemy2 object. Both objects will disappear
         for(Enemy2Obj enemy2Obj: GameUtils.enemy2ObjList){
             if(this.getRec().intersects(enemy2Obj.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
                 enemy2Obj.setX(-100);
                 enemy2Obj.setY(-100);//the enemy object is removed from the game window
+
                 this.x = -200;
                 this.y = -200;//the player's plane object is removed from the game window
+
                 GameUtils.removeList.add(enemy2Obj);
                 GameUtils.removeList.add(this);
             }
@@ -44,10 +56,16 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
         //the third case: the player's plane object collides with enemy2's bullet object. Both objects will disappear
         for(Enemy2BulletObj enemy2BulletObj: GameUtils.enemy2BulletObjList){
             if(this.getRec().intersects(enemy2BulletObj.getRec())){
+
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
                 enemy2BulletObj.setX(-100);
                 enemy2BulletObj.setY(-100);//the enemy object is removed from the game window
+
                 this.x = -200;
                 this.y = -200;//the player's plane object is removed from the game window
+                
                 GameUtils.removeList.add(enemy2BulletObj);
                 GameUtils.removeList.add(this);
             }
