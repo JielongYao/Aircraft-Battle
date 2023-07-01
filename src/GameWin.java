@@ -14,6 +14,10 @@ public class GameWin extends JFrame{//game windows class in the game
     
     PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 37, 41, 290, 550, 0, this); //the plane object on the player's side
 
+    LittleBoss1Obj littleBoss1Obj = new LittleBoss1Obj(GameUtils.littleBoss1Img, 172, 112, -200, 250, 3, this);//the first type of little boss object
+
+    LittleBoss2Obj littleBoss2Obj = new LittleBoss2Obj(GameUtils.littleBoss2Img, 172, 112, 300, -150, 2, this);//the second type of little boss object
+
     int count = 0;// number of times to invoke createObj()
 
     public void launch(){
@@ -135,6 +139,14 @@ public class GameWin extends JFrame{//game windows class in the game
             }
 
         }
+
+        if(count == 600){
+            GameUtils.gameObjList.add(littleBoss2Obj);
+        }
+
+        if(count == 800){
+            GameUtils.gameObjList.add(littleBoss1Obj);
+        }      
 
         count++;
     }

@@ -12,7 +12,8 @@ public class GameUtils{
     public static Image enemy1Img = new ImageIcon("imgs/enemy1.png").getImage(); //access the picture of the first type of enemy plane
     public static Image enemy2Img = new ImageIcon("imgs/enemy2.png").getImage(); //access the picture of the second type of enemy plane
     public static Image enemy2BulletImg = new ImageIcon("imgs/enemy2bullet.png").getImage(); //access the picture of the bullet of the second type of enemy plane
-
+    public static Image littleBoss1Img = new ImageIcon("imgs/littleboss1.png").getImage(); //access the picture of the first type of boss plane
+    public static Image littleBoss2Img = new ImageIcon("imgs/littleboss2.png").getImage(); //access the picture of the second type of boss plane
 
     public static ArrayList<ShellObj> shellObjList = new ArrayList<>(); //a collection of shell object of the plane at our side
     public static ArrayList<Enemy1Obj> enemy1ObjList = new ArrayList<>(); //a collection of objects of the first type of enemy 
