@@ -6,3 +6,5 @@ References:
 
 3. Behaviour of paint(), update() and repaint(): However, if repaint() is called in a tight loop, the AWT thread queue may be overwhelmed and strange things may happen. Repaint() merely requests the AWT thread to call update(). It then returns immediately. This type of behaviour is called asynchronous. How the AWT thread reacts to the request is up to it.
 https://www.cs.ryerson.ca/mes/courses/cps530/programs/threads/Repaint/ This is why I don't override update() to solve screen flicker, because repaint() in launch() doesn't call update() in my code.
+
+4. Static code block: https://www.geeksforgeeks.org/static-blocks-in-java/
