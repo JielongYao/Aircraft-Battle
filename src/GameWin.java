@@ -20,6 +20,8 @@ public class GameWin extends JFrame{//game windows class in the game
 
     int count = 0;// number of times to invoke createObj()
 
+    public static int planeindex = 0; //the index of planeObj in the gameObjList
+
     public void launch(){
 
         this.setSize(600, 800); //width, height
@@ -35,6 +37,8 @@ public class GameWin extends JFrame{//game windows class in the game
         GameUtils.gameObjList.add(bgObj); //add background object to the list of all objects in the game
 
         GameUtils.gameObjList.add(planeObj); ////add plane object at the player side to the list of all objects in the game
+
+        planeindex = GameUtils.gameObjList.indexOf(planeObj);//access index of planeObj in the gameObjList; will be used in tracking functionality in LittleBoss2BulletObj class
 
         this.addMouseListener(new MouseAdapter(){//click mouse to start game
 
@@ -139,14 +143,30 @@ public class GameWin extends JFrame{//game windows class in the game
             }
 
         }
-
-        if(count == 600){
-            GameUtils.gameObjList.add(littleBoss2Obj);
+        
+        if(count % 200 == 0){
+            if(count == 600){
+                GameUtils.gameObjList.add(littleBoss2Obj);
+            }
+            if(GameUtils.gameObjList.contains(littleBoss2Obj)){
+                int x = littleBoss2Obj.getX();
+                int y = littleBoss2Obj.getY();
+                GameUtils.littleBoss2BulletObjList.add(new LittleBoss2BulletObj(GameUtils.littleBoss2BulletImg, 21, 59, x + 78, y + 100, 3, this)); 
+                GameUtils.gameObjList.add(GameUtils.littleBoss2BulletObjList.get(GameUtils.littleBoss2BulletObjList.size() - 1));
+            }
         }
-
-        if(count == 800){
-            GameUtils.gameObjList.add(littleBoss1Obj);
-        }      
+        
+        if(count % 40 == 0){
+            if(count == 800){
+                GameUtils.gameObjList.add(littleBoss1Obj);
+            }
+            if(GameUtils.gameObjList.contains(littleBoss1Obj)){
+                int x = littleBoss1Obj.getX();
+                int y = littleBoss1Obj.getY();
+                GameUtils.littleBoss1BulletObjList.add(new LittleBoss1BulletObj(GameUtils.littleBoss1BulletImg, 42, 42, x + 75, y + 100, 4, this)); 
+                GameUtils.gameObjList.add(GameUtils.littleBoss1BulletObjList.get(GameUtils.littleBoss1BulletObjList.size() - 1));
+            }
+        }
 
         count++;
     }
