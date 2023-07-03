@@ -146,6 +146,7 @@ public class GameWin extends JFrame{//game windows class in the game
         
         if(count % 200 == 0){
             if(count == 600){
+                GameUtils.littleBoss2ObjList.add(littleBoss2Obj);
                 GameUtils.gameObjList.add(littleBoss2Obj);
             }
             if(GameUtils.gameObjList.contains(littleBoss2Obj)){
@@ -158,6 +159,7 @@ public class GameWin extends JFrame{//game windows class in the game
         
         if(count % 40 == 0){
             if(count == 800){
+                GameUtils.littleBoss1ObjList.add(littleBoss1Obj);
                 GameUtils.gameObjList.add(littleBoss1Obj);
             }
             if(GameUtils.gameObjList.contains(littleBoss1Obj)){

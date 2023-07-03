@@ -70,6 +70,72 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(this);
             }
         }
+
+        //the fourth case: the player's plane object collides with little boss1's object. Player's plane will disappear, little boss won't.
+        for(LittleBoss1Obj littleboss1: GameUtils.littleBoss1ObjList){
+            if(this.getRec().intersects(littleboss1.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                this.x = -200;
+                this.y = -200;//the player's plane object is removed from the game window
+                
+                GameUtils.removeList.add(this);
+            }
+        }
+
+        //the fifth case: the player's plane object collides with little boss2's object. Player's plane will disappear, little boss won't.
+        for(LittleBoss2Obj littleboss2: GameUtils.littleBoss2ObjList){
+            if(this.getRec().intersects(littleboss2.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                this.x = -200;
+                this.y = -200;//the player's plane object is removed from the game window
+                
+                GameUtils.removeList.add(this);
+            }
+        }
+
+        //the sixth case: the player's plane object collides with littleboss1's bullet object. Both objects will disappear
+        for(LittleBoss1BulletObj littleboss1bullet: GameUtils.littleBoss1BulletObjList){
+            if(this.getRec().intersects(littleboss1bullet.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                littleboss1bullet.setX(-100);
+                littleboss1bullet.setY(-100);
+
+                this.x = -200;
+                this.y = -200;//the player's plane object is removed from the game window
+
+                GameUtils.removeList.add(littleboss1bullet);
+                GameUtils.removeList.add(this);
+            }
+        }
+
+        //the seventh case: the player's plane object collides with littleboss2's bullet object. Both objects will disappear
+        for(LittleBoss2BulletObj littleboss2bullet: GameUtils.littleBoss2BulletObjList){
+            if(this.getRec().intersects(littleboss2bullet.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                littleboss2bullet.setX(-100);
+                littleboss2bullet.setY(-100);
+
+                this.x = -200;
+                this.y = -200;//the player's plane object is removed from the game window
+
+                GameUtils.removeList.add(littleboss2bullet);
+                GameUtils.removeList.add(this);
+            }
+        }
+        
+
         super.paintSelf(g);
     }
 

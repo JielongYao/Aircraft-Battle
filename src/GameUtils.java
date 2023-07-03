@@ -16,14 +16,18 @@ public class GameUtils{
     public static Image littleBoss2Img = new ImageIcon("imgs/littleboss2.png").getImage(); //access the picture of the second type of boss plane
     public static Image littleBoss1BulletImg = new ImageIcon("imgs/littleboss1bullet.png").getImage(); //access the picture of the bullet of boss1 plane
     public static Image littleBoss2BulletImg = new ImageIcon("imgs/littleboss2bullet.png").getImage(); //access the picture of the bullet of boss2 plane
+    public static Image giftImg = new ImageIcon("imgs/gift.png").getImage(); //access the supply (gift) picture
 
     public static ArrayList<ShellObj> shellObjList = new ArrayList<>(); //a collection of shell object of the plane at our side
     public static ArrayList<Enemy1Obj> enemy1ObjList = new ArrayList<>(); //a collection of objects of the first type of enemy 
     public static ArrayList<Enemy2Obj> enemy2ObjList = new ArrayList<>(); //a collection of objects of the second type of enemy
     public static ArrayList<Enemy2BulletObj> enemy2BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of the second type of enemy
     public static ArrayList<ExplosionObj> explosionObjList = new ArrayList<>(); //a collection of objects of explosion
+    public static ArrayList<LittleBoss1Obj> littleBoss1ObjList = new ArrayList<>(); //the arraylist to store littleboss1 object
+    public static ArrayList<LittleBoss2Obj> littleBoss2ObjList = new ArrayList<>(); //the arraylist to store littleboss2 object
     public static ArrayList<LittleBoss1BulletObj> littleBoss1BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of boss1
     public static ArrayList<LittleBoss2BulletObj> littleBoss2BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of boss2
+    public static ArrayList<GiftObj> giftObjList = new ArrayList<>(); //a collection of gifts (supplies)
 
     public static ArrayList<GameObj> removeList = new ArrayList<>(); //a collection of game objects which have been removed from the game window
     
