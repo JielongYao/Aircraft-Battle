@@ -20,6 +20,8 @@ public class GiftObj extends GameObj{//class of supply which the player's plane 
 
     public void paintSelf(Graphics g){
         super.img = GameUtils.giftImg;
+        super.width = 64;
+        super.height = 62;
         super.paintSelf(g);
     }
 

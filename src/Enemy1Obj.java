@@ -27,7 +27,41 @@ public class Enemy1Obj extends GameObj{//class of the first type of enemy plane 
                 this.x = -200;
                 this.y = -200;//the enemy1 object is removed from the game window
 
-                GameUtils.removeList.add(shellObj);// this objecr still exists, but no longer drawn
+                GameUtils.removeList.add(shellObj);// this object still exists, but no longer drawn
+                GameUtils.removeList.add(this);
+            }
+        }
+
+        //the enemy1 object collides with player's doubleshell object. Both objects will disappear
+        for(DoubleShellObj doubleshellObj: GameUtils.doubleShellObjList){
+            if(this.getRec().intersects(doubleshellObj.getRec())){
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                doubleshellObj.setX(-100);
+                doubleshellObj.setY(-100);//the player's plane's doubleshell object is removed from the game window
+
+                this.x = -200;
+                this.y = -200;//the enemy1 object is removed from the game window
+
+                GameUtils.removeList.add(doubleshellObj);// this object still exists, but no longer drawn
+                GameUtils.removeList.add(this);
+            }
+        }
+
+        //the enemy1 object collides with player's tripleshell object. Both objects will disappear
+        for(TripleShellObj tripleshellObj: GameUtils.tripleShellObjList){
+            if(this.getRec().intersects(tripleshellObj.getRec())){
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                tripleshellObj.setX(-100);
+                tripleshellObj.setY(-100);//the player's plane's tripleshell object is removed from the game window
+
+                this.x = -200;
+                this.y = -200;//the enemy1 object is removed from the game window
+
+                GameUtils.removeList.add(tripleshellObj);// this object still exists, but no longer drawn
                 GameUtils.removeList.add(this);
             }
         }

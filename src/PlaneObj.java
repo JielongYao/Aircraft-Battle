@@ -3,6 +3,8 @@ import java.awt.event.*;
 
 public class PlaneObj extends GameObj{//class of the plane at player's side in the game
 
+    public static int times = 0;//number of times the player's plane collides with gift
+
     public PlaneObj(){
         super();
     }
@@ -135,6 +137,16 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
             }
         }
         
+        //when the player's plane collides with gift, the plane won't disappear, but the gift will disppear
+        for(GiftObj gift: GameUtils.giftObjList){
+            if(this.getRec().intersects(gift.getRec())){
+
+                gift.setX(-100);
+                gift.setY(-100);
+                GameUtils.removeList.add(gift);
+                times++;
+            }
+        }
 
         super.paintSelf(g);
     }

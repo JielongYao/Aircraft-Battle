@@ -17,6 +17,9 @@ public class GameUtils{
     public static Image littleBoss1BulletImg = new ImageIcon("imgs/littleboss1bullet.png").getImage(); //access the picture of the bullet of boss1 plane
     public static Image littleBoss2BulletImg = new ImageIcon("imgs/littleboss2bullet.png").getImage(); //access the picture of the bullet of boss2 plane
     public static Image giftImg = new ImageIcon("imgs/gift.png").getImage(); //access the supply (gift) picture
+    public static Image doubleShellImg = new ImageIcon("imgs/doubleshell.png").getImage(); //access the picture of the doubleshell
+    public static Image tripleShellImg = new ImageIcon("imgs/tripleshell.png").getImage(); //access the picture of the tripleshell
+
 
     public static ArrayList<ShellObj> shellObjList = new ArrayList<>(); //a collection of shell object of the plane at our side
     public static ArrayList<Enemy1Obj> enemy1ObjList = new ArrayList<>(); //a collection of objects of the first type of enemy 
@@ -28,6 +31,9 @@ public class GameUtils{
     public static ArrayList<LittleBoss1BulletObj> littleBoss1BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of boss1
     public static ArrayList<LittleBoss2BulletObj> littleBoss2BulletObjList = new ArrayList<>(); //a collection of objects of the bullet of boss2
     public static ArrayList<GiftObj> giftObjList = new ArrayList<>(); //a collection of gifts (supplies)
+    public static ArrayList<DoubleShellObj> doubleShellObjList = new ArrayList<>(); //a collection of doubleshell objects
+    public static ArrayList<TripleShellObj> tripleShellObjList = new ArrayList<>(); //a collection of tripleshell objects
+
 
     public static ArrayList<GameObj> removeList = new ArrayList<>(); //a collection of game objects which have been removed from the game window
     

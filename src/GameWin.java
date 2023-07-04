@@ -119,8 +119,18 @@ public class GameWin extends JFrame{//game windows class in the game
 
     public void createObj(){
         if(count % 10 == 0){//create a shell of our side every 10 times invoking createObj(); otherwise the shell (or other objects) generation rate will be very high
-            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX() + 12, planeObj.getY() - 20, 6, this)); // create new shell object at the player's side
-            GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
+            if(planeObj.times == 0){//the player's plane haven't collided with any gift
+                GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, 14, 29, planeObj.getX() + 12, planeObj.getY() - 20, 6, this)); // create new shell object at the player's side
+                GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size() - 1));
+            }
+            if(planeObj.times == 1){//the player's plane collided with 1 gift
+                GameUtils.doubleShellObjList.add(new DoubleShellObj(GameUtils.doubleShellImg, 32, 64, planeObj.getX() + 3, planeObj.getY() - 20, 8, this)); 
+                GameUtils.gameObjList.add(GameUtils.doubleShellObjList.get(GameUtils.doubleShellObjList.size() - 1));
+            }
+            if(planeObj.times == 2){//the player's plane collided with 2 gifts
+                GameUtils.tripleShellObjList.add(new TripleShellObj(GameUtils.tripleShellImg, 64, 182, planeObj.getX() - 10, planeObj.getY() - 100, 15, this)); 
+                GameUtils.gameObjList.add(GameUtils.tripleShellObjList.get(GameUtils.tripleShellObjList.size() - 1));
+            }
         }
 
         if(count % 30 == 0){//control the generation rate of the object of the first type of enemy 
