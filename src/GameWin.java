@@ -18,6 +18,10 @@ public class GameWin extends JFrame{//game windows class in the game
 
     LittleBoss2Obj littleBoss2Obj = new LittleBoss2Obj(GameUtils.littleBoss2Img, 172, 112, 300, -150, 2, this);//the second type of little boss object
 
+    BossObj bossObj = new BossObj(GameUtils.bossImg, 240, 174, 180, -180, 3, this);//final boss
+
+    WarningObj warningObj = new WarningObj(GameUtils.warningImg, 599, 90, 0, 350, 0, this);//warning mark object
+
     int count = 0;// number of times to invoke createObj()
 
     public static int planeindex = 0; //the index of planeObj in the gameObjList
@@ -155,7 +159,7 @@ public class GameWin extends JFrame{//game windows class in the game
         }
         
         if(count % 200 == 0){
-            if(count == 600){
+            if(count == 1800){//littleboss2 will appear
                 GameUtils.littleBoss2ObjList.add(littleBoss2Obj);
                 GameUtils.gameObjList.add(littleBoss2Obj);
             }
@@ -168,7 +172,7 @@ public class GameWin extends JFrame{//game windows class in the game
         }
         
         if(count % 40 == 0){
-            if(count == 800){
+            if(count == 2000){//littleboss1 will appear
                 GameUtils.littleBoss1ObjList.add(littleBoss1Obj);
                 GameUtils.gameObjList.add(littleBoss1Obj);
             }
@@ -179,7 +183,37 @@ public class GameWin extends JFrame{//game windows class in the game
                 GameUtils.gameObjList.add(GameUtils.littleBoss1BulletObjList.get(GameUtils.littleBoss1BulletObjList.size() - 1));
             }
         }
+        
+        if(count == 3300){//warning mark will appear before the final boss appears, because 3300 < 3600
+            GameUtils.gameObjList.add(warningObj);
+        }
 
+        if(count == 3500){//warning mark disppear
+            GameUtils.removeList.add(warningObj);
+        }
+
+        if(count % 20 == 0){
+            if(count == 3600){//final boss will appear
+                GameUtils.gameObjList.add(bossObj);
+            }
+            if(GameUtils.gameObjList.contains(bossObj)){
+                int x = bossObj.getX();
+                int y = bossObj.getY();
+                //final boss will also generate littleboss1bullet
+                GameUtils.littleBoss1BulletObjList.add(new LittleBoss1BulletObj(GameUtils.littleBoss1BulletImg, 42, 42, x + 10, y + 130, 6, this)); 
+                GameUtils.gameObjList.add(GameUtils.littleBoss1BulletObjList.get(GameUtils.littleBoss1BulletObjList.size() - 1));
+                
+                if(count % 100 == 0){//final boss will also generate littleboss2bullet
+                    GameUtils.littleBoss2BulletObjList.add(new LittleBoss2BulletObj(GameUtils.littleBoss2BulletImg, 21, 59, x + 220, y + 130, 3, this)); 
+                    GameUtils.gameObjList.add(GameUtils.littleBoss2BulletObjList.get(GameUtils.littleBoss2BulletObjList.size() - 1));
+                }
+
+                //final boss will generate bossbullet
+                GameUtils.bossBulletObjList.add(new BossBulletObj(GameUtils.bossBulletImg, 91, 90, x + 90, y + 100, 9, this)); 
+                GameUtils.gameObjList.add(GameUtils.bossBulletObjList.get(GameUtils.bossBulletObjList.size() - 1));
+            }
+        }
+        
         count++;
     }
 

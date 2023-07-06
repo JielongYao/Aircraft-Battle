@@ -19,6 +19,8 @@ public class GameUtils{
     public static Image giftImg = new ImageIcon("imgs/gift.png").getImage(); //access the supply (gift) picture
     public static Image doubleShellImg = new ImageIcon("imgs/doubleshell.png").getImage(); //access the picture of the doubleshell
     public static Image tripleShellImg = new ImageIcon("imgs/tripleshell.png").getImage(); //access the picture of the tripleshell
+    public static Image bossBulletImg = new ImageIcon("imgs/bossbullet.png").getImage(); //access the picture of the bullet of the final boss
+    public static Image warningImg = new ImageIcon("imgs/warning.gif").getImage(); //access the warning picture
 
 
     public static ArrayList<ShellObj> shellObjList = new ArrayList<>(); //a collection of shell object of the plane at our side
@@ -33,7 +35,7 @@ public class GameUtils{
     public static ArrayList<GiftObj> giftObjList = new ArrayList<>(); //a collection of gifts (supplies)
     public static ArrayList<DoubleShellObj> doubleShellObjList = new ArrayList<>(); //a collection of doubleshell objects
     public static ArrayList<TripleShellObj> tripleShellObjList = new ArrayList<>(); //a collection of tripleshell objects
-
+    public static ArrayList<BossBulletObj> bossBulletObjList = new ArrayList<>(); //a collection of bossbullet objects
 
     public static ArrayList<GameObj> removeList = new ArrayList<>(); //a collection of game objects which have been removed from the game window
     
