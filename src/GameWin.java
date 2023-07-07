@@ -63,7 +63,9 @@ public class GameWin extends JFrame{//game windows class in the game
         });
 
         while(true){
-            createObj();
+            if(state == 1){
+                createObj();
+            }
             repaint();
             try{
                 Thread.sleep(25); //prevent from repainting too fast; let thread sleep for 25 ms
@@ -114,10 +116,9 @@ public class GameWin extends JFrame{//game windows class in the game
             // Instead, after adding all the objects in the game into the list, we can iterate over the list and make each object to paint itself to reduce code repetition
             for(int i = 0; i < GameUtils.gameObjList.size(); i++){
                 GameUtils.gameObjList.get(i).paintSelf(gOff);
-            }
+            } 
         }
         g.drawImage(offScreenImage, 0, 0, null);
-        
     }
 
 
@@ -213,7 +214,7 @@ public class GameWin extends JFrame{//game windows class in the game
                 GameUtils.gameObjList.add(GameUtils.bossBulletObjList.get(GameUtils.bossBulletObjList.size() - 1));
             }
         }
-        
+
         count++;
     }
 

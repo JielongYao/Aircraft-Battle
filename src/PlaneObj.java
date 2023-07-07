@@ -137,6 +137,24 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
             }
         }
         
+        //the eighth case: the player's plane object collides with finalboss's bullet object. Both objects will disappear
+        for(BossBulletObj bossbullet: GameUtils.bossBulletObjList){
+            if(this.getRec().intersects(bossbullet.getRec())){
+                
+                GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
+                GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
+
+                bossbullet.setX(-100);
+                bossbullet.setY(-100);
+
+                this.x = -200;
+                this.y = -200;//the player's plane object is removed from the game window
+
+                GameUtils.removeList.add(bossbullet);
+                GameUtils.removeList.add(this);
+            }
+        }
+
         //when the player's plane collides with gift, the plane won't disappear, but the gift will disppear
         for(GiftObj gift: GameUtils.giftObjList){
             if(this.getRec().intersects(gift.getRec())){
