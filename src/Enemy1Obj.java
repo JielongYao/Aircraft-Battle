@@ -29,6 +29,8 @@ public class Enemy1Obj extends GameObj{//class of the first type of enemy plane 
 
                 GameUtils.removeList.add(shellObj);// this object still exists, but no longer drawn
                 GameUtils.removeList.add(this);
+
+                GameWin.score++;
             }
         }
 
@@ -46,6 +48,8 @@ public class Enemy1Obj extends GameObj{//class of the first type of enemy plane 
 
                 GameUtils.removeList.add(doubleshellObj);// this object still exists, but no longer drawn
                 GameUtils.removeList.add(this);
+
+                GameWin.score++;
             }
         }
 
@@ -63,6 +67,8 @@ public class Enemy1Obj extends GameObj{//class of the first type of enemy plane 
 
                 GameUtils.removeList.add(tripleshellObj);// this object still exists, but no longer drawn
                 GameUtils.removeList.add(this);
+
+                GameWin.score++;
             }
         }
         

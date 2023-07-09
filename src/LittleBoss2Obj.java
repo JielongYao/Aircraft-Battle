@@ -59,6 +59,8 @@ public class LittleBoss2Obj extends GameObj{//class of the second type of little
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 5;
                 }
             }
         }
@@ -94,6 +96,8 @@ public class LittleBoss2Obj extends GameObj{//class of the second type of little
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 5;
                 }
             }
         }

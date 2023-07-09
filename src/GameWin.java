@@ -6,7 +6,7 @@ public class GameWin extends JFrame{//game windows class in the game
     
     //variable to record the game state
     //0: unstarted, 1: in the game, 2: paused, 3: defeat, 4: victory
-    int state = 0; 
+    public static int state = 0; 
 
     BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -1800, 2); //background object
 
@@ -25,6 +25,8 @@ public class GameWin extends JFrame{//game windows class in the game
     int count = 0;// number of times to invoke createObj()
 
     public static int planeindex = 0; //the index of planeObj in the gameObjList
+
+    public static int score = 0; //scores the player gains in the game
 
     public void launch(){
 
@@ -62,6 +64,19 @@ public class GameWin extends JFrame{//game windows class in the game
             }
         });
 
+        this.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyPressed(KeyEvent e){
+                if(e.getKeyCode() == 32){//when space key is pressed
+                    if(state == 1){
+                        state = 2;
+                    }else if(state == 2){
+                        state = 1;
+                    }
+                }
+            }
+        });
+
         while(true){
             if(state == 1){
                 createObj();
@@ -86,7 +101,7 @@ public class GameWin extends JFrame{//game windows class in the game
         }
         Graphics gOff = offScreenImage.getGraphics();
 
-        if(state == 0){
+        if(state == 0){//game is unstarted
             
             //Image bgImg = Toolkit.getDefaultToolkit().getImage("imgs/bg.jpg"); //another method to access the background picture here without GameUtils.java
             //Image bgImg = new ImageIcon(this.getClass().getResource("imgs/bg.jpg")).getImage(); //access the background picture here without GameUtils.java
@@ -101,10 +116,10 @@ public class GameWin extends JFrame{//game windows class in the game
             //Draw the bold italic words "Left Click to Start" on the game start interface
             gOff.setColor(Color.BLUE); // set font color
             gOff.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, 30)); //set font name and size
-            gOff.drawString("Left Click to Start", 160, 320); //x = 160, y = 320
+            gOff.drawString("Left Click to Start", 180, 320); //x = 160, y = 320
         }
 
-        if(state == 1){
+        if(state == 1){//game is going
             // bgObj.paintSelf(gOff);
             // planeObj.paintSelf(gOff);
             // shellObj.paintSelf(gOff);
@@ -118,6 +133,24 @@ public class GameWin extends JFrame{//game windows class in the game
                 GameUtils.gameObjList.get(i).paintSelf(gOff);
             } 
         }
+
+        if(state == 2){//game is paused
+            gOff.drawImage(GameUtils.bgImg, 0, 0 , null);
+            GameUtils.writeWord(gOff, "Game Paused", Color.YELLOW, 30, 200, 330);
+        }
+
+        if(state == 3){//defeat
+            gOff.drawImage(GameUtils.bgImg, 0, 0 , null);
+            GameUtils.writeWord(gOff, "Defeat", Color.RED, 30, 240, 360);
+        }
+
+        if(state == 4){//victory
+            gOff.drawImage(GameUtils.bgImg, 0, 0 , null);
+            GameUtils.writeWord(gOff, "Victory", Color.GREEN, 30, 240, 360);
+        }
+        
+        GameUtils.writeWord(gOff, "Score: " + score, Color.GREEN, 20, 30, 70);//write player's current score in the game window
+
         g.drawImage(offScreenImage, 0, 0, null);
     }
 
@@ -193,7 +226,7 @@ public class GameWin extends JFrame{//game windows class in the game
             GameUtils.removeList.add(warningObj);
         }
 
-        if(count % 20 == 0){
+        if(count % 40 == 0){
             if(count == 3600){//final boss will appear
                 GameUtils.gameObjList.add(bossObj);
             }
@@ -204,7 +237,7 @@ public class GameWin extends JFrame{//game windows class in the game
                 GameUtils.littleBoss1BulletObjList.add(new LittleBoss1BulletObj(GameUtils.littleBoss1BulletImg, 42, 42, x + 10, y + 130, 6, this)); 
                 GameUtils.gameObjList.add(GameUtils.littleBoss1BulletObjList.get(GameUtils.littleBoss1BulletObjList.size() - 1));
                 
-                if(count % 100 == 0){//final boss will also generate littleboss2bullet
+                if(count % 120 == 0){//final boss will also generate littleboss2bullet
                     GameUtils.littleBoss2BulletObjList.add(new LittleBoss2BulletObj(GameUtils.littleBoss2BulletImg, 21, 59, x + 220, y + 130, 3, this)); 
                     GameUtils.gameObjList.add(GameUtils.littleBoss2BulletObjList.get(GameUtils.littleBoss2BulletObjList.size() - 1));
                 }

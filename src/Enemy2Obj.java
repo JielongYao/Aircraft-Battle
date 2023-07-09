@@ -36,6 +36,8 @@ public class Enemy2Obj extends GameObj{//class of the second type of enemy plane
                     this.x = -200;
                     this.y = -200;//the enemy2 object is removed from the game window
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 2;
                 }
             }
         }
@@ -57,6 +59,8 @@ public class Enemy2Obj extends GameObj{//class of the second type of enemy plane
                     this.x = -200;
                     this.y = -200;//the enemy2 object is removed from the game window
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 2;
                 }
             }
         }
@@ -78,6 +82,8 @@ public class Enemy2Obj extends GameObj{//class of the second type of enemy plane
                     this.x = -200;
                     this.y = -200;//the enemy2 object is removed from the game window
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 2;
                 }
             }
         }

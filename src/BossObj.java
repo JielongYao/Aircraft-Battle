@@ -44,6 +44,8 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+                    GameWin.score += 10;
+                    GameWin.state = 4;
                 }
             }
         }
@@ -65,6 +67,8 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+                    GameWin.score += 10;
+                    GameWin.state = 4;
                 }
             }
         }
@@ -86,6 +90,8 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+                    GameWin.score += 10;
+                    GameWin.state = 4;
                 }
             }
         }

@@ -41,5 +41,10 @@ public class GameUtils{
     
     public static ArrayList<GameObj> gameObjList = new ArrayList<>(); //a collection of all the objects in the game
 
-
+    //str: words to be writen, color: the color of words, size: the size of words, x and y: the location of words in the game window
+    public static void writeWord(Graphics g, String str, Color color, int size, int x, int y){//used to write words in the game
+        g.setColor(color);
+        g.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, size)); //set font name and size
+        g.drawString(str, x, y);
+    }
 }

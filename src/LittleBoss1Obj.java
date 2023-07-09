@@ -54,6 +54,8 @@ public class LittleBoss1Obj extends GameObj{//class of the first type of little 
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 5;
                 }
             }
         }
@@ -89,6 +91,8 @@ public class LittleBoss1Obj extends GameObj{//class of the first type of little 
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+
+                    GameWin.score += 5;
                 }
             }
         }

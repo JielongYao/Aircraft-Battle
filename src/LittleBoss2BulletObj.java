@@ -40,6 +40,7 @@ public class LittleBoss2BulletObj extends GameObj{//class of the bullet of the s
                     this.x = -200;
                     this.y = -200;
                     GameUtils.removeList.add(this);
+                    GameWin.score += 1;
                 }
             }
         }
@@ -58,6 +59,7 @@ public class LittleBoss2BulletObj extends GameObj{//class of the bullet of the s
                 this.x = -200;
                 this.y = -200;
                 GameUtils.removeList.add(this);
+                GameWin.score += 1;
             }
         }
 
@@ -75,6 +77,8 @@ public class LittleBoss2BulletObj extends GameObj{//class of the bullet of the s
                 this.x = -200;
                 this.y = -200;
                 GameUtils.removeList.add(this);
+
+                GameWin.score += 1;
                 
             }
         }
