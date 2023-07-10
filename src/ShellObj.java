@@ -18,9 +18,9 @@ public class ShellObj extends GameObj{//class of shell of the plane at player's 
         super.paintSelf(g);
         y -= speed; //shell is moving upward
 
-        if(y < 0){
-            GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
-        }
+        // if(y < 0){
+        //     GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
+        // }
     }
 
     public Rectangle getRec(){

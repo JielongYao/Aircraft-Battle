@@ -102,7 +102,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
         g.fillRect(200, 40, 200, 10); //x, y, width, height
         //red rectangle
         g.setColor(Color.RED);
-        g.fillRect(200, 40, 200 * health / 120, 10); //x, y, width, height
+        g.fillRect(200, 40, 200 * health / 180, 10); //x, y, width, height
 
     }
 

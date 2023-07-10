@@ -75,9 +75,9 @@ public class Enemy1Obj extends GameObj{//class of the first type of enemy plane 
         super.paintSelf(g);
         y += speed;
 
-        if(y > 800){
-            GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
-        }
+        // if(y > 800){
+        //     GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
+        // }
     }
 
     public Rectangle getRec(){
