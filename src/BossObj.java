@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class BossObj extends GameObj{//class of the final boss in the game
 
-    int health = 60;
+    int health = 180;
 
     public BossObj(){
         super();
@@ -39,7 +39,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
                 GameUtils.removeList.add(shell);
                 
                 if(health > 0){
-                    health--;
+                    health -= 3;
                 }else{
                     this.x = -200;
                     this.y = -200;
@@ -51,7 +51,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
         }
 
         //when boss object collides with player's plane's doubleshell object, player's doubleshell disappear
-        //after 30 times of collision (health == 0), final boss will disappear
+        //after 45 times of collision (health == 0), final boss will disappear
         for(DoubleShellObj doubleshell: GameUtils.doubleShellObjList){
             if(this.getRec().intersects(doubleshell.getRec())){
                 
@@ -62,7 +62,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
                 GameUtils.removeList.add(doubleshell);
                 
                 if(health > 0){
-                    health-=2;
+                    health -= 4;
                 }else{
                     this.x = -200;
                     this.y = -200;
@@ -74,7 +74,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
         }
 
         //when boss object collides with player's plane's tripleshell object, player's tripleshell disappear
-        //after 20 times of collision (health == 0), finalboss will disappear
+        //after 36 times of collision (health == 0), finalboss will disappear
         for(TripleShellObj tripleshell: GameUtils.tripleShellObjList){
             if(this.getRec().intersects(tripleshell.getRec())){
                 
@@ -85,7 +85,7 @@ public class BossObj extends GameObj{//class of the final boss in the game
                 GameUtils.removeList.add(tripleshell);
                 
                 if(health > 0){
-                    health-=3;
+                    health -= 5;
                 }else{
                     this.x = -200;
                     this.y = -200;
@@ -95,6 +95,15 @@ public class BossObj extends GameObj{//class of the final boss in the game
                 }
             }
         }
+
+        //implement boss's lifebar
+        //white rectangle
+        g.setColor(Color.WHITE);
+        g.fillRect(200, 40, 200, 10); //x, y, width, height
+        //red rectangle
+        g.setColor(Color.RED);
+        g.fillRect(200, 40, 200 * health / 120, 10); //x, y, width, height
+
     }
 
     public Rectangle getRec(){

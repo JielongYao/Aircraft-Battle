@@ -17,6 +17,10 @@ public class DoubleShellObj extends GameObj{//class of shell of the plane at pla
     public void paintSelf(Graphics g){
         super.paintSelf(g);
         y -= speed; //shell is moving upward
+
+        if(y < 0){
+            GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
+        }
     }
 
     public Rectangle getRec(){

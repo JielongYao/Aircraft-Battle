@@ -82,6 +82,10 @@ public class LittleBoss2BulletObj extends GameObj{//class of the bullet of the s
                 
             }
         }
+
+        if(y > 800){
+            GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
+        }
     }
 
     public Rectangle getRec(){

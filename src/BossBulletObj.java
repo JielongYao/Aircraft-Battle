@@ -17,6 +17,10 @@ public class BossBulletObj extends GameObj{//class of the bullet of the final bo
     public void paintSelf(Graphics g){
         super.paintSelf(g);
         y += speed; 
+
+        if(y > 800){
+            GameUtils.removeList.add(this); //reduce plotting pressure after removeing game elements which is out of the game window
+        }
     }
 
     public Rectangle getRec(){
