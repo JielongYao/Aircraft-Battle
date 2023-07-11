@@ -35,6 +35,8 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(enemy1Obj);
                 GameUtils.removeList.add(this);
 
+                
+                
                 GameWin.state = 3;
             }
         }

@@ -28,6 +28,16 @@ public class GameWin extends JFrame{//game windows class in the game
 
     public static int score = 0; //scores the player gains in the game
 
+    UnstartedMusicPlayer unstartedMusicPlayer = new UnstartedMusicPlayer("audio/unstarted.wav");
+
+    GamePausedMusicPlayer gamePausedMusicPlayer = new GamePausedMusicPlayer("audio/respite.wav");
+
+    InTheGameMusicPlayer inTheGameMusicPlayer = new InTheGameMusicPlayer("audio/in the game.wav");
+
+    DefeatMusicPlayer defeatMusicPlayer = new DefeatMusicPlayer("audio/defeat.wav");
+
+    public static VictoryMusicPlayer victoryMusicPlayer = new VictoryMusicPlayer("audio/victory.wav");
+
     public void launch(){
 
         this.setSize(600, 800); //width, height
@@ -46,12 +56,16 @@ public class GameWin extends JFrame{//game windows class in the game
 
         planeindex = GameUtils.gameObjList.indexOf(planeObj);//access index of planeObj in the gameObjList; will be used in tracking functionality in LittleBoss2BulletObj class
 
+        unstartedMusicPlayer.play();
+
         this.addMouseListener(new MouseAdapter(){//click mouse to start game
 
             public void mouseClicked(MouseEvent e){
                 if(e.getButton() == 1 && state == 0){//when left mouse click and game is in unstarted state
+                    unstartedMusicPlayer.stop();
                     state = 1; //set game state to "in the game" state
                     repaint(); //call paint()
+                    inTheGameMusicPlayer.play();
                 }
             }
         });
@@ -69,8 +83,12 @@ public class GameWin extends JFrame{//game windows class in the game
             public void keyPressed(KeyEvent e){
                 if(e.getKeyCode() == 32){//when space key is pressed
                     if(state == 1){
+                        inTheGameMusicPlayer.pause();
                         state = 2;
+                        gamePausedMusicPlayer.play();
                     }else if(state == 2){
+                        gamePausedMusicPlayer.stop();
+                        inTheGameMusicPlayer.resume();
                         state = 1;
                     }
                 }
@@ -136,7 +154,8 @@ public class GameWin extends JFrame{//game windows class in the game
 
         if(state == 2){//game is paused
             gOff.drawImage(GameUtils.bgImg, 0, 0 , null);
-            GameUtils.writeWord(gOff, "Game Paused", Color.YELLOW, 30, 200, 330);
+            GameUtils.writeWord(gOff, "Game Paused", Color.YELLOW, 30, 200, 330);   
+
         }
 
         if(state == 3){//defeat
