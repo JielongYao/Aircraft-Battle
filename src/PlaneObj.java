@@ -26,14 +26,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                enemy1Obj.setX(-100);
-                enemy1Obj.setY(-100);//the enemy object is removed from the game window
+                // enemy1Obj.setX(-100);
+                // enemy1Obj.setY(-100);//the enemy object is removed from the game window
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
 
-                GameUtils.removeList.add(enemy1Obj);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(enemy1Obj);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -49,14 +49,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                enemy2Obj.setX(-100);
-                enemy2Obj.setY(-100);//the enemy object is removed from the game window
+                // enemy2Obj.setX(-100);
+                // enemy2Obj.setY(-100);//the enemy object is removed from the game window
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
 
-                GameUtils.removeList.add(enemy2Obj);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(enemy2Obj);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -72,14 +72,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                enemy2BulletObj.setX(-100);
-                enemy2BulletObj.setY(-100);//the enemy object is removed from the game window
+                // enemy2BulletObj.setX(-100);
+                // enemy2BulletObj.setY(-100);//the enemy object is removed from the game window
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
                 
-                GameUtils.removeList.add(enemy2BulletObj);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(enemy2BulletObj);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -95,10 +95,10 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
                 
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -114,10 +114,10 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
                 
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -133,14 +133,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                littleboss1bullet.setX(-100);
-                littleboss1bullet.setY(-100);
+                // littleboss1bullet.setX(-100);
+                // littleboss1bullet.setY(-100);
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
 
-                GameUtils.removeList.add(littleboss1bullet);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(littleboss1bullet);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -156,14 +156,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                littleboss2bullet.setX(-100);
-                littleboss2bullet.setY(-100);
+                // littleboss2bullet.setX(-100);
+                // littleboss2bullet.setY(-100);
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
 
-                GameUtils.removeList.add(littleboss2bullet);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(littleboss2bullet);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
@@ -179,14 +179,14 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.explosionObjList.add(new ExplosionObj(x, y)); // explosion effect appears after objects collide, so we create a new explosion object
                 GameUtils.gameObjList.add(GameUtils.explosionObjList.get(GameUtils.explosionObjList.size() - 1));
 
-                bossbullet.setX(-100);
-                bossbullet.setY(-100);
+                // bossbullet.setX(-100);
+                // bossbullet.setY(-100);
 
-                this.x = -200;
-                this.y = -200;//the player's plane object is removed from the game window
+                // this.x = -200;
+                // this.y = -200;//the player's plane object is removed from the game window
 
-                GameUtils.removeList.add(bossbullet);
-                GameUtils.removeList.add(this);
+                // GameUtils.removeList.add(bossbullet);
+                // GameUtils.removeList.add(this);
 
                 GameWin.inTheGameMusicPlayer.stop();//stop in the game music
                 GameWin.defeatMusicPlayer.play();//start defeat music
