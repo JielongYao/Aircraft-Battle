@@ -36,6 +36,7 @@ public class GameUtils{
     public static ArrayList<DoubleShellObj> doubleShellObjList = new ArrayList<>(); //a collection of doubleshell objects
     public static ArrayList<TripleShellObj> tripleShellObjList = new ArrayList<>(); //a collection of tripleshell objects
     public static ArrayList<BossBulletObj> bossBulletObjList = new ArrayList<>(); //a collection of bossbullet objects
+    public static ArrayList<BossObj> bossObjList = new ArrayList<>(); //a collection of boss objects
 
     public static ArrayList<GameObj> removeList = new ArrayList<>(); //a collection of game objects which have been removed from the game window
     

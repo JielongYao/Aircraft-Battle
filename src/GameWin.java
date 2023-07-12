@@ -248,6 +248,7 @@ public class GameWin extends JFrame{//game windows class in the game
         if(count % 30 == 0){
             if(count == 3600){//final boss will appear
                 GameUtils.gameObjList.add(bossObj);
+                GameUtils.bossObjList.add(bossObj);
             }
             if(GameUtils.gameObjList.contains(bossObj)){
                 int x = bossObj.getX();
