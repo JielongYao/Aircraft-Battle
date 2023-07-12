@@ -35,7 +35,8 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(enemy1Obj);
                 GameUtils.removeList.add(this);
 
-                
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
                 
                 GameWin.state = 3;
             }
@@ -57,6 +58,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(enemy2Obj);
                 GameUtils.removeList.add(this);
 
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
+
                 GameWin.state = 3;
             }
         }
@@ -77,6 +81,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(enemy2BulletObj);
                 GameUtils.removeList.add(this);
 
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
+
                 GameWin.state = 3;
             }
         }
@@ -93,6 +100,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 
                 GameUtils.removeList.add(this);
 
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
+
                 GameWin.state = 3;
             }
         }
@@ -108,6 +118,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 this.y = -200;//the player's plane object is removed from the game window
                 
                 GameUtils.removeList.add(this);
+
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
 
                 GameWin.state = 3;
             }
@@ -129,6 +142,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(littleboss1bullet);
                 GameUtils.removeList.add(this);
 
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
+
                 GameWin.state = 3;
             }
         }
@@ -149,6 +165,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
                 GameUtils.removeList.add(littleboss2bullet);
                 GameUtils.removeList.add(this);
 
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
+
                 GameWin.state = 3;
             }
         }
@@ -168,6 +187,9 @@ public class PlaneObj extends GameObj{//class of the plane at player's side in t
 
                 GameUtils.removeList.add(bossbullet);
                 GameUtils.removeList.add(this);
+
+                GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                GameWin.defeatMusicPlayer.play();//start defeat music
 
                 GameWin.state = 3;
             }

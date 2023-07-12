@@ -45,6 +45,10 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.y = -200;
                     GameUtils.removeList.add(this);
                     GameWin.score += 10;
+
+                    GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                    GameWin.victoryMusicPlayer.play();//play victory music
+
                     GameWin.state = 4;
                 }
             }
@@ -68,6 +72,10 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.y = -200;
                     GameUtils.removeList.add(this);
                     GameWin.score += 10;
+
+                    GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                    GameWin.victoryMusicPlayer.play();//play victory music
+
                     GameWin.state = 4;
                 }
             }
@@ -91,6 +99,10 @@ public class BossObj extends GameObj{//class of the final boss in the game
                     this.y = -200;
                     GameUtils.removeList.add(this);
                     GameWin.score += 10;
+
+                    GameWin.inTheGameMusicPlayer.stop();//stop in the game music
+                    GameWin.victoryMusicPlayer.play();//play victory music
+
                     GameWin.state = 4;
                 }
             }

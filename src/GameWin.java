@@ -30,11 +30,11 @@ public class GameWin extends JFrame{//game windows class in the game
 
     UnstartedMusicPlayer unstartedMusicPlayer = new UnstartedMusicPlayer("audio/unstarted.wav");
 
-    GamePausedMusicPlayer gamePausedMusicPlayer = new GamePausedMusicPlayer("audio/respite.wav");
+    GamePausedMusicPlayer gamePausedMusicPlayer = new GamePausedMusicPlayer("audio/game paused.wav");
 
-    InTheGameMusicPlayer inTheGameMusicPlayer = new InTheGameMusicPlayer("audio/in the game.wav");
+    public static InTheGameMusicPlayer inTheGameMusicPlayer = new InTheGameMusicPlayer("audio/in the game.wav");
 
-    DefeatMusicPlayer defeatMusicPlayer = new DefeatMusicPlayer("audio/defeat.wav");
+    public static DefeatMusicPlayer defeatMusicPlayer = new DefeatMusicPlayer("audio/defeat.wav");
 
     public static VictoryMusicPlayer victoryMusicPlayer = new VictoryMusicPlayer("audio/victory.wav");
 
