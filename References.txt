@@ -8,3 +8,5 @@ References:
 https://www.cs.ryerson.ca/mes/courses/cps530/programs/threads/Repaint/ This is why I don't override update() to solve screen flicker, because repaint() in launch() doesn't call update() in my code.
 
 4. Static code block: https://www.geeksforgeeks.org/static-blocks-in-java/
+
+5. Play audio in java: https://youtu.be/TErboGLHZGA
