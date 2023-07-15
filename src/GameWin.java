@@ -127,14 +127,15 @@ public class GameWin extends JFrame{//game windows class in the game
 
             gOff.drawImage(GameUtils.bossImg, 190, 70 , null); //x = 190, y = 70
 
-            gOff.drawImage(GameUtils.explodeImg, 270, 350, null); //x = 270, y = 350
+            gOff.drawImage(GameUtils.explodeImg, 270, 400, null); //x = 270, y = 350
 
-            gOff.drawImage(GameUtils.planeImg, 280, 470 , null); //x = 280, y = 470
+            gOff.drawImage(GameUtils.planeImg, 280, 570 , null); //x = 280, y = 470
 
-            //Draw the bold italic words "Left Click to Start" on the game start interface
+            //Draw the bold italic words "Left Click to Start" and "Press Spacebar to Pause" on the game start interface
             gOff.setColor(Color.BLUE); // set font color
-            gOff.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, 30)); //set font name and size
-            gOff.drawString("Left Click to Start", 180, 320); //x = 160, y = 320
+            gOff.setFont(new Font(Font.SANS_SERIF, Font.ITALIC + Font.BOLD, 20)); //set font name and size
+            gOff.drawString("Left Click to Start", 220, 320); //x = 220, y = 320
+            gOff.drawString("Press Spacebar to Pause", 190, 360); //x = 220, y = 320
         }
 
         if(state == 1){//game is going
