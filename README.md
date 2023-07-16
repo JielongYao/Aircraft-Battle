@@ -1,6 +1,6 @@
 # Aircraft-Battle
 
-**Aircraft Battle** is a 2D game created using Java. In the game, the player scores by controlling an aircraft to destroy enemy aircrafts, and wins by defeating the final boss aircraft. A video demo is attached below.
+**Aircraft Battle** is a 2D game created using Java. In the game, the player scores by controlling an aircraft to destroy enemy aircrafts, and wins by defeating the final boss aircraft. A **video demo** is attached below.
 
 **Steps to run:**
  * In the src folder, open the Commmand Prompt/Terminal
