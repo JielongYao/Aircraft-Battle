@@ -19,5 +19,7 @@
 **Video demo:**
 
 
-https://github.com/JielongYao/Aircraft-Battle/assets/113145028/cf9e50ee-e7da-424c-a2a3-72ca579a92a1
+https://github.com/JielongYao/Aircraft-Battle/assets/113145028/02c4cd08-67ec-4468-b294-96bfde87f839
+
+
 
